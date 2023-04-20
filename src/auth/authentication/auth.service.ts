@@ -22,7 +22,4 @@ export class AuthService {
       throw new UnauthorizedException({message:error.message})
     }
   }
-  async accessControl(jwtoken: string){
-
-  }
 }

@@ -1,11 +1,11 @@
 import { Connection } from 'mongoose';
-import UserSchema from '../schemas/user.schema';
+import EventSchema from '../schemas/Event.schema';
 
-export const usersProviders = [
+export const eventsProviders = [
   {
     provide: 'USER_MODEL',
     useFactory: (connection: Connection) =>
-      connection.model('User', UserSchema),
+      connection.model('Event', EventSchema),
     inject: ['DATABASE_CONNECTION'],
   },
 ];

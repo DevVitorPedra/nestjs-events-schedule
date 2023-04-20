@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import * as bcrypt from 'bcrypt';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';

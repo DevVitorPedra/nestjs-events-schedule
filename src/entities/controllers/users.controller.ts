@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, UseFilters } from '@nestjs/common';
 import { CreateUserDTO } from '../dtos/create-user.dto';
 import { UserService } from '../services/users.services';
 import { User } from '../interfaces/user.interface';
+import { MongoExceptionFilter } from 'src/http/exceptions/mongo.exception';
 
 @Controller('users')
 export class UserController {
@@ -9,9 +10,14 @@ export class UserController {
   constructor(private readonly usersServices: UserService) {}
 
   @Post()
+  @UseFilters(MongoExceptionFilter)
   async create(@Body() createUserDTO: CreateUserDTO) {
-    console.log(createUserDTO)
-    return this.usersServices.create(createUserDTO);
+    try {
+      console.log(createUserDTO)
+      return this.usersServices.create(createUserDTO);
+    } catch (error) {
+      return error.message
+    }
   }
 
   @Get()
