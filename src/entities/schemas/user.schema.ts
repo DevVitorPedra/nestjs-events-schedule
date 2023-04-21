@@ -19,11 +19,11 @@ export class User {
   @Prop({ required: true })
   password: string;
 
-  @Prop({required: true})
+  @Prop({ required: true })
   email: string;
 
 }
- 
+
 const UserSchema = SchemaFactory.createForClass(User);
 UserSchema.pre('save', async function save(next) {
   if (!this.isModified('password')) return next();
@@ -35,4 +35,4 @@ UserSchema.pre('save', async function save(next) {
     return next(err);
   }
 });
- export default UserSchema;
+export default UserSchema;

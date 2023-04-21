@@ -3,27 +3,26 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
 import { User } from './user.schema';
 
-export type EventDocument = HydratedDocument<Event>;
+export type AchievementDocument = HydratedDocument<Achievement>;
 
 @Schema()
-export class Event {
+export class Achievement {
   @Prop({ required: true })
-  event_name: string;
+  name: string;
 
   @Prop({ required: true })
-  event_location: string;
-
-  @Prop({ required: true })
-  invite_required: boolean;
+  goal_date: Date;
 
   @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }] })
-  owner: User[];
+  participants: User[];
 
   @Prop({required: true})
-  email: string;
+  description: string;
 
+  @Prop({required: true})
+  img_url: string;
 }
  
-const EventSchema = SchemaFactory.createForClass(Event);
+const AchievementSchema = SchemaFactory.createForClass(Achievement);
 
-export default EventSchema;
+export default AchievementSchema;
