@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, UseFilters } from '@nestjs/common';
-import { CreateUserDTO } from '../dtos/create-user.dto';
+import { CreateUserDTO } from '../../entities/dtos/create-user.dto';
 import { UserService } from '../services/users.services';
-import { User } from '../interfaces/user.interface';
+import { User } from '../../entities/interfaces/user.interface';
 import { MongoExceptionFilter } from 'src/http/exceptions/mongo.exception';
 
 @Controller('users')

@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Document } from 'mongoose';
-import { User } from '../schemas/user.schema';
+import { User } from '../../database/schemas/user.schema';
 
 export interface Achievement extends Document {
    readonly participants: User[];

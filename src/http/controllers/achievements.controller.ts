@@ -1,8 +1,8 @@
 import { Controller, Get, Post, Body, UseFilters } from '@nestjs/common';
-import { CreateAchievementDTO } from '../dtos/create-achievement.dto';
+import { CreateAchievementDTO } from '../../entities/dtos/create-achievement.dto';
 import { MongoExceptionFilter } from 'src/http/exceptions/mongo.exception';
 import { AchievementServices } from '../services/achievements.services';
-import { Achievement } from '../schemas/achievement.schema';
+import { Achievement } from '../../database/schemas/achievement.schema';
 
 @Controller('achievements')
 export class AchievementControler {

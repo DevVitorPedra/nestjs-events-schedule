@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { Model } from 'mongoose';
 import { Injectable, Inject } from '@nestjs/common';
-import { User } from '../interfaces/user.interface';
-import { CreateUserDTO } from '../dtos/create-user.dto';
+import { User } from '../../entities/interfaces/user.interface';
+import { CreateUserDTO } from '../../entities/dtos/create-user.dto';
 
 @Injectable()
 export class UserService {
