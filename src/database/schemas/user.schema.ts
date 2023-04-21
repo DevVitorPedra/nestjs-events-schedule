@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
 import * as bcrypt from 'bcrypt';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import mongoose, { HydratedDocument } from 'mongoose';
+import { Achievement } from './achievement.schema';
 
 export type UserDocument = HydratedDocument<User>;
 
@@ -21,7 +22,10 @@ export class User {
 
   @Prop({ required: true })
   email: string;
-
+  
+  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Achievements' }] })
+  achievements: Achievement[];
+  
 }
 
 const UserSchema = SchemaFactory.createForClass(User);

@@ -1,8 +1,9 @@
 /* eslint-disable prettier/prettier */
-import { Model } from 'mongoose';
+import { Model, ObjectId } from 'mongoose';
 import { Injectable, Inject } from '@nestjs/common';
-import { User } from '../../entities/interfaces/user.interface';
-import { CreateUserDTO } from '../../entities/dtos/create-user.dto';
+import { User } from '../interfaces/user.interface';
+import {  CreateUserDTO } from '../dtos/user.dtos';
+import { Achievement } from '../schemas/achievement.schema';
 
 @Injectable()
 export class UserService {
@@ -21,5 +22,11 @@ export class UserService {
   }
   async findOne(email: string): Promise<User>{
     return this.userModel.findOne({email: email}).exec()
+  }
+  async addAchievement(achievementId:ObjectId, userId:ObjectId): Promise<User>{
+    return this.userModel.findOneAndUpdate(
+      { _id: userId },
+      { $addToSet: { achievements: achievementId } },{returnOriginal: false}
+    );
   }
 }

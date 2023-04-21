@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { Model } from 'mongoose';
 import { Injectable, Inject } from '@nestjs/common';
-import { Achievement } from '../../entities/interfaces/achievement.interface';
-import { CreateAchievementDTO } from '../../entities/dtos/create-achievement.dto';
+import { Achievement } from '../interfaces/achievement.interface';
+import { CreateAchievementDTO } from '../dtos/achievement.dtos';
 
 @Injectable()
 export class AchievementServices {

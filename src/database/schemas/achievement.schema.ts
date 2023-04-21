@@ -13,9 +13,6 @@ export class Achievement {
   @Prop({ required: true })
   goal_date: Date;
 
-  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }] })
-  participants: User[];
-
   @Prop({required: true})
   description: string;
 

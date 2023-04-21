@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Document } from 'mongoose';
+import { Achievement } from '../schemas/achievement.schema';
 
 export interface User extends Document {
    readonly first_name: string;
@@ -7,5 +8,5 @@ export interface User extends Document {
    readonly email: string; 
    readonly nickname: string;
    readonly password: string;
- 
+   readonly achievements: Achievement[];
 }

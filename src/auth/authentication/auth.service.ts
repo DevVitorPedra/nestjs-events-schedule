@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { UserService } from '../../http/services/users.services';
+import { UserService } from '../../database/services/users.services';
 import * as bcrypt from 'bcrypt';
 import { sign } from 'jsonwebtoken';
 @Injectable()
