@@ -7,13 +7,13 @@
 
 Repositório para servir de template e/ou estudos iniciais de NestJS e MongoDB, possui dois exemplos de schemas, com relacionamentos e arrays de entidades relacionadas, problema comum em relacionamentos em bancos NoSQL
 
-## Installation
+## Instalação
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+## Rodando a aplicação
 
 ```bash
 # development
